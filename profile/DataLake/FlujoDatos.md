@@ -52,10 +52,10 @@ flowchart LR
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
 
-    class A,B,C,D,E repository;
+    class DIRPS1,DRIPS2,DRIPS3,DRIPS4,DRIPS5,CRIPS1 repository;
     class F process;
     class DP repository;
-    class G process2;
+    class RD,DB,RS repository
 
 
     click DRIPS1 "https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/view"
