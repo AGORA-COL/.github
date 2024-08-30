@@ -16,10 +16,12 @@ flowchart LR
     end
 
     subgraph 2. Data Lake
-    F([<a href="./Preproceso.md">2. Preproceso</a>])
+    F([2. Preproceso])
     DP[("3. Data preprocesada")]
     G(["4. Generación de Reportes"])
     end
+
+    click F "./Preproceso.md" _parent
 
     subgraph 4. Reportes
         R1["4.1 Reporte 1"]
