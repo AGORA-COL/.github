@@ -19,13 +19,6 @@ flowchart LR
     DP[("3. Data preprocesada")]
     G(["4. Generación de reportes descriptivos"])
 
-    subgraph 5. Reportes descriptivos
-        R1["5.1 Reporte 1"]
-        R2["5.2 Reporte 2"]
-        R3["5.3 Reporte 3"]
-        R4["5.4 Reporte 4"]
-        R5["5.5 Reporte 5"]
-    end
 
     A --> F
     B --> F
@@ -37,11 +30,6 @@ flowchart LR
     
     DP --> G
 
-    G --> R1
-    G --> R2
-    G --> R3
-    G --> R4
-    G --> R5
 
     classDef data fill:#999,stroke:#333,stroke-width:2px,color:#000;
     classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black;
@@ -59,11 +47,17 @@ flowchart LR
 ```
 
 # 1. Datos crudos (RAW)
-- 1.1 RIPS: [1. Documento entendimiento de los datos-RIPS- 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/edit)
-- 1.2 Estadísticas vitales: [2. Documento entendimiento de los datos- ESTADÍSTICAS VITALES- 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1iS1R8nHHWaVkTCsxTbTI5t9atf6AJeuR/edit)
-- 1.3 SEGCOVID: [3. Documento entendimiento de los datos-SEGCOVID 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1ErjxN7yliQpPZoOO_h-7L-Qg5XQCONbd/edit)
-- 1.4 SIVIGILA: [4. Documento entendimiento de los datos-SIVIGILA-2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/17mFQoDqTd8Azzy9971D3XkibAzFu6egv/edit)
-- 1.5 VACUNASCOVID: [5. Documento entendimiento de los datos-VACUNASCOVID-2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1kIC2y6j7VdZ7J-GziTIGz7EuRUx8Aec9/edit)
+## 1.1 RIPS
+- [1. Documento entendimiento de los datos-RIPS- 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/edit)
+- [Clasificación RIPS - Google Drive](https://drive.google.com/drive/folders/1pApPVLWTkwgCbYgMG0tAWkvJDn2RRe1K)
+## 1.2 Estadísticas vitales
+- [2. Documento entendimiento de los datos- ESTADÍSTICAS VITALES- 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1iS1R8nHHWaVkTCsxTbTI5t9atf6AJeuR/edit)
+## 1.3 SEGCOVID
+- [3. Documento entendimiento de los datos-SEGCOVID 2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1ErjxN7yliQpPZoOO_h-7L-Qg5XQCONbd/edit)
+## 1.4 SIVIGILA
+- [4. Documento entendimiento de los datos-SIVIGILA-2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/17mFQoDqTd8Azzy9971D3XkibAzFu6egv/edit)
+## 1.5 VACUNASCOVID
+- [5. Documento entendimiento de los datos-VACUNASCOVID-2024-1.5v.docx - Google Docs](https://docs.google.com/document/d/1kIC2y6j7VdZ7J-GziTIGz7EuRUx8Aec9/edit)
 
 # 2. Preproceso
 ```mermaid
@@ -98,10 +92,20 @@ flowchart LR
     class G process2;    
 
 ```
-[AGORA-COL/Data_lake: Lago de datos del Proyecto ÁGORA](https://github.com/AGORA-COL/Data_lake)
+- [AGORA-COL/Data_lake: Lago de datos del Proyecto ÁGORA](https://github.com/AGORA-COL/Data_lake)
 
 # 3. Data preprocesada
 # 4. Generación de reportes descriptivos
-[AGORA-COL/dl-covid19-descriptive-reports: Repositorio de procesos de verificación y análisis de los datos del proyecto del Lago de Datos de AGORA](https://github.com/AGORA-COL/dl-covid19-descriptive-reports)
+- [AGORA-COL/dl-covid19-descriptive-reports: Repositorio de procesos de verificación y análisis de los datos del proyecto del Lago de Datos de AGORA](https://github.com/AGORA-COL/dl-covid19-descriptive-reports)
+
+## COVID19 Dashboard
+Creación de tablero en Shiny app para la visualización del contexto de la Pandemia por Covid19 en Colombia.
+![alt text](images/image.png)
+- [AGORA-COL/pandemia_Colombia](https://github.com/AGORA-COL/pandemia_Colombia) 
+  - Migrando hacia: [AGORA-COL/dl-covid19-col-dashboard](https://github.com/AGORA-COL/dl-covid19-col-dashboard)
+
+## Quality RIPS surveillance
+Generar una rutina de análisis a partir de RIPS para evaluar el impacto de la pandemia por Covid-19 en las atenciones en salud.
+- [AGORA-COL/quality-rips-surveillance](https://github.com/AGORA-COL/quality-rips-surveillance)
 
 
