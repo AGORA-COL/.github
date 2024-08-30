@@ -26,7 +26,7 @@ flowchart LR
         end
     end
 
-    F([2. Preproceso])
+    P([2. Preproceso])
     DP[("3. Data preprocesada")]
     subgraph G["4. Generación de reportes"]
         RD[Reportes descriptivos]
@@ -35,13 +35,13 @@ flowchart LR
     end
 
 
-    A --> F
-    B --> F
-    C --> F
-    D --> F
-    E --> F
+    A --> P
+    B --> P
+    C --> P
+    D --> P
+    E --> P
 
-    F --> DP
+    P --> DP
     
     DP --> G
 
@@ -53,10 +53,11 @@ flowchart LR
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
 
     class DIRPS1,DRIPS2,DRIPS3,DRIPS4,DRIPS5,CRIPS1 repository;
-    class F process;
+    class P process;
     class DP repository;
     class RD,DB,RS repository
 
+    click P "https://github.com/AGORA-COL/Data_lake"
 
     click DRIPS1 "https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/view"
     click CRIPS1 "https://drive.google.com/drive/folders/1pApPVLWTkwgCbYgMG0tAWkvJDn2RRe1K"
