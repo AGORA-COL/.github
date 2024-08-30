@@ -1,26 +1,22 @@
-<style>
-
-</style>
-
 # Data Lake
 
 ## Objetivos
-- Testar inter-operabilidad de fuentes de información grandes (Big Data) del sistema de salud en Colombia.
+- Probar inter-operabilidad de fuentes de información grandes (Big Data) del sistema de salud en Colombia.
 - Generar modelos descriptivos y predictivos. 
 
 ## Flujo de datos
 ```mermaid
 flowchart LR
     subgraph "1. Datos crudos (RAW)"
-        A[("1.1 RIPS")]
-        B[("1.2 Estadísticas Vitales")]
-        C[("1.3 SEGCOVID")]
-        D[("1.4 SIVIGILA")]
-        E[("1.5 VACUNASCOVID")]
+        A[(<a href="https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/edit">1.1 RIPS</a>)]
+        B[(<a href="https://docs.google.com/document/d/1iS1R8nHHWaVkTCsxTbTI5t9atf6AJeuR/edit">1.2 Estadísticas vitales</a>)]
+        C[(<a href="https://docs.google.com/document/d/1ErjxN7yliQpPZoOO_h-7L-Qg5XQCONbd/edit">1.3 SEGCOVID</a>)]
+        D[(<a href="https://docs.google.com/document/d/17mFQoDqTd8Azzy9971D3XkibAzFu6egv/edit">1.4 SIVIGILA</a>)]
+        E[(<a href="https://docs.google.com/document/d/1kIC2y6j7VdZ7J-GziTIGz7EuRUx8Aec9/edit">1.5 VACUNASCOVID</a>)]
     end
 
     subgraph 2. Data Lake
-    F(["2. Preproceso"])
+    F([<a href="Preproceso.md">2. Preproceso</a>])
     DP[("3. Data preprocesada")]
     G(["4. Generación de Reportes"])
     end
@@ -63,12 +59,7 @@ flowchart LR
 
 
 ```
-# 1. Datos crudos (RAW)
-## 1.1 RIPS
-## 1.2 Estadísticas Vitales
-## 1.3 SEGCOVID
-## 1.4 SIVIGILA
-## 1.5 VACUNASCOVID
+
 # 2. Preproceso
 ```mermaid
 flowchart LR
