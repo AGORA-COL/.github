@@ -9,20 +9,25 @@
 flowchart LR
     subgraph R["1. Datos crudos (RAW)"]
         subgraph A[1.1 RIPS]
-            DRIPS1[1. Documento entendimiento de los datos-RIPS- 2024-1.5v.docx]
-            CRIPS1[Clasificación RIPS]
+            DATA_RIPS1[Datos RIPS]
+            DOC_RIPS1[1. Documento entendimiento de los datos-RIPS- 2024-1.5v.docx]
+            CRIPS1([Clasificación RIPS])
         end
         subgraph B[1.2 Estadísticas vitales]
-            DRIPS2[2. Documento entendimiento de los datos- ESTADÍSTICAS VITALES- 2024-1.5v.docx]
+            DATA_RIPS2[Datos Estarísticas vitales]
+            DOC_RIPS2[2. Documento entendimiento de los datos- ESTADÍSTICAS VITALES- 2024-1.5v.docx]
         end
         subgraph C[1.3 SEGCOVID]
-            DRIPS3[3. Documento entendimiento de los datos-SEGCOVID 2024-1.5v.docx]
+            DATA_RIPS3[Datos SEGCOVID]
+            DOC_RIPS3[3. Documento entendimiento de los datos-SEGCOVID 2024-1.5v.docx]
         end
         subgraph D[1.4 SIVIGILA]
-            DRIPS4[4. Documento entendimiento de los datos-SIVIGILA-2024-1.5v.docx]
+            DATA_RIPS4[Datos SIVIGILA]
+            DOC_RIPS4[4. Documento entendimiento de los datos-SIVIGILA-2024-1.5v.docx]
         end
         subgraph E[1.5 VACUNASCOVID]
-            DRIPS5[5. Documento entendimiento de los datos-VACUNASCOVID-2024-1.5v.docx]
+            DATA_RIPS5[Datos VACUNASCOVID]
+            DOC_RIPS5[5. Documento entendimiento de los datos-VACUNASCOVID-2024-1.5v.docx]
         end
     end
 
@@ -53,19 +58,20 @@ flowchart LR
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
 
-    class DRIPS1,DRIPS2,DRIPS3,DRIPS4,DRIPS5 doc;
-    class CRIPS1 data;
+    class DOC_RIPS1,DOC_RIPS2,DOC_RIPS3,DOC_RIPS4,DOC_RIPS5 doc;
+    class DATA_RIPS1,DATA_RIPS2,DATA_RIPS3,DATA_RIPS4,DATA_RIPS5 data;
+    class CRIPS1 process;
     class P process;
     class DP repository;
     class RD,DB,RS process
 
     click P "https://github.com/AGORA-COL/Data_lake"
 
-    click DRIPS1 "https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/view"
-    click DRIPS2 "https://docs.google.com/document/d/1iS1R8nHHWaVkTCsxTbTI5t9atf6AJeuR/view"
-    click DRIPS3 "https://docs.google.com/document/d/1ErjxN7yliQpPZoOO_h-7L-Qg5XQCONbd/view"
-    click DRIPS4 "https://docs.google.com/document/d/17mFQoDqTd8Azzy9971D3XkibAzFu6egv/view"
-    click DRIPS5 "https://docs.google.com/document/d/1kIC2y6j7VdZ7J-GziTIGz7EuRUx8Aec9/view"
+    click DOC_RIPS1 "https://docs.google.com/document/d/1v1sbOreJdBO0SDKUqhwKxVJw9MxYego8/view"
+    click DOC_RIPS2 "https://docs.google.com/document/d/1iS1R8nHHWaVkTCsxTbTI5t9atf6AJeuR/view"
+    click DOC_RIPS3 "https://docs.google.com/document/d/1ErjxN7yliQpPZoOO_h-7L-Qg5XQCONbd/view"
+    click DOC_RIPS4 "https://docs.google.com/document/d/17mFQoDqTd8Azzy9971D3XkibAzFu6egv/view"
+    click DOC_RIPS5 "https://docs.google.com/document/d/1kIC2y6j7VdZ7J-GziTIGz7EuRUx8Aec9/view"
 
     click CRIPS1 "https://drive.google.com/drive/folders/1pApPVLWTkwgCbYgMG0tAWkvJDn2RRe1K"
 
