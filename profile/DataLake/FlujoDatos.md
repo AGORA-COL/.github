@@ -29,9 +29,9 @@ flowchart LR
     P([2. Preproceso])
     DP[("3. Data preprocesada")]
     subgraph G["4. Generación de reportes"]
-        RD[Reportes descriptivos]
-        DB[COVID19 Dashboard]
-        RS[RIPS Surveillance]
+        RD([Reportes descriptivos])
+        DB([COVID19 Dashboard])
+        RS([RIPS Surveillance])
     end
 
 
@@ -55,7 +55,7 @@ flowchart LR
     class DIRPS1,DRIPS2,DRIPS3,DRIPS4,DRIPS5,CRIPS1 repository;
     class P process;
     class DP repository;
-    class RD,DB,RS repository
+    class RD,DB,RS process
 
     click P "https://github.com/AGORA-COL/Data_lake"
 
