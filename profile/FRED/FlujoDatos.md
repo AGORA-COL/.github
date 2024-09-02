@@ -27,7 +27,7 @@ flowchart TB
         AM([Actualizar modelo])
         EC --> F --> FP --> RP --> ML --> AM --> FAM --> F
     end
-    R([3. Generación de reportes])
+    R([Generación de reportes])
 
     GPS --> PS --> CPS
     DC --> CPS

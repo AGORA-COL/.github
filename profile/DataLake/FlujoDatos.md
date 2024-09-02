@@ -59,22 +59,22 @@ flowchart LR
 
         P([Preprocesamiento])
 
-        P --> ST
+        P --> AN
 
-        ST[Stage]
+        AN["Data preprocesada (analytics)"]
 
     end
     
-    ST --> RD
-    ST --> RS
+    AN --> RD
+    AN --> RS
 
 
     OD[(Repositorio OneDrive)]
 
     OD --> DB
 
-    subgraph G["Generación de reportes"]
-        RD([Reportes descriptivos])
+    subgraph G[Generación de reportes]
+        RD([Reportes descriptivos COVID19])
         DB([COVID19 Dashboard])
         RS([RIPS Surveillance])
     end
@@ -96,7 +96,7 @@ flowchart LR
     class DL repository;
     class CRIPS process;
     class L,P process;
-    class DP,OD,ST data;
+    class DP,OD,AN data;
     class RD,DB,RS process
 
     click L "https://github.com/AGORA-COL/Data_lake"
