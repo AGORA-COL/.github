@@ -14,7 +14,7 @@ flowchart LR
                 DOC_RIPS["`Documento entendimiento
                      de los datos 
                      RIPS`"]
-                CRIPS([Clasificación RIPS])
+                CRIPS[Clasificación RIPS]
             end
             subgraph B[Estadísticas vitales]
                 DATA_EV[Datos Estarísticas vitales]
@@ -50,14 +50,16 @@ flowchart LR
         E --> L
 
         
-        L([Limpieza])
+        L["`**Limpieza**
+        (Github: *Data_lake*)`"]
         subgraph DP["Data limpia (stagedata)"]
         end
 
         L --> DP
         DP --> P
 
-        P([Preprocesamiento])
+        P["`**Preprocesamiento** 
+        (Github: *Data_lake*)`"]
 
         P --> AN
 
@@ -74,9 +76,17 @@ flowchart LR
     OD --> DB
 
     subgraph G[Generación de reportes]
-        RD([Reportes descriptivos COVID19])
-        DB([COVID19 Dashboard])
-        RS([RIPS Surveillance])
+        RD["`**Reportes descriptivos 
+        COVID19**
+        (Github: *dl-covid19-
+        descriptive-reports*)`"]
+        RS["`**RIPS Surveillance**
+        (Github: *quality-
+        rips-surveillance*)
+        `"]
+        DB["`**COVID19 Dashboard**
+        (Github: *dl-covid19-
+        col-dashboard*)`"]
     end
 
 
@@ -85,7 +95,7 @@ flowchart LR
 
     classDef data fill:#fff,stroke:#333,stroke-width:2px,color:#000,rx:10,ry:10;
     classDef doc fill:#cab,stroke:#333,stroke-width:2px,color:#000;
-    classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black;
+    classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black,rx:30,ry:30;
     classDef repository fill:#aaa,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;

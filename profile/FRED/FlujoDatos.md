@@ -48,7 +48,7 @@ flowchart TB
     class EC,ML,FAM,FP model;
 
     classDef model fill:#fff,stroke:#333,stroke-width:2px,color:#000,rx:10,ry:10;
-    classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black;
+    classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black,rx:30,ry:30;
     classDef repository fill:#fff,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef software fill:orange,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#ddd,stroke:#333,stroke-width:2px,color:#000;
