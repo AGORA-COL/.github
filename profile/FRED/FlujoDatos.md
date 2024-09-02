@@ -4,7 +4,7 @@ El modelo FRED (Grefenstette et al., 2013) permite explorar cómo una enfermedad
 
 En este caso, se utiliza para simular el proceso de dispersión del virus SARS-CoV-2 en cada departamento de Colombia.
 
-![](images/image.png)
+![](../images/image.png)
 
 # Flujo de datos
 
@@ -25,8 +25,7 @@ flowchart TB
         RP([Regresión de parámetros])
         ML[Modelo ML para regresión]
         AM([Actualizar modelo])
-        FAM --> F --> FP --> RP --> ML --> AM --> FAM
-        EC --> F
+        EC --> F --> FP --> RP --> ML --> AM --> FAM --> F
     end
     R([3. Generación de reportes])
 
@@ -44,12 +43,11 @@ flowchart TB
     click FAM "https://github.com/AGORA-COL/fred_colombia_implementation"
 
     %% Styles
-
     class F,R,RP,GPS,CPS,AM process;
     class PS,DC repository;
     class EC,ML,FAM,FP model;
 
-    classDef model fill:white,stroke:#333,stroke-width:2px,color:#000;
+    classDef model fill:#fff,stroke:#333,stroke-width:2px,color:#000,rx:10,ry:10;
     classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black;
     classDef repository fill:#fff,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef software fill:orange,stroke:#333,stroke-width:2px,color:#000;
