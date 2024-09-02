@@ -71,7 +71,9 @@ flowchart LR
     AN --> RS
 
 
-    OD[(Repositorio OneDrive)]
+    OD[("`Repositorio OneDrive
+    *PANDEMIA COLOMBIA-raw_data*
+    `")]
 
     OD --> DB
 
