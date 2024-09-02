@@ -10,14 +10,14 @@ En este caso, se utiliza para simular el proceso de dispersión del virus SARS-C
 
 ```mermaid
 flowchart TB
-    subgraph EPS[1. Elaboración Poblaciones sintéticas]
+    subgraph EPS[Elaboración Poblaciones sintéticas]
         GPS([Generador poblaciones sintéticas])
         PS[(Poblaciones sintéticas)]
         CPS([Comparación poblaciones sintéticas])
         DC[(Datos censo 2018)]
     end 
     PS --> F
-    subgraph CP[2. Calibración de parámetros]
+    subgraph CP[Calibración de parámetros]
         EC[Escenarios contrafactuales]
         FAM[Fred Agent Model]
         F([FRED])
