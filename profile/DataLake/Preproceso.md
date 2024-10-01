@@ -3,7 +3,7 @@
 ```mermaid
 flowchart LR
     R[("1. Datos crudos (RAW)")]
-    subgraph 2. Preproceso
+    subgraph PP["2. Preproceso"]
         direction LR
         C(["2.1. Conversión"])
         P[("2.2. Datos en formato Parquet")]

@@ -42,12 +42,19 @@ flowchart LR
             end
         end
 
+        comm1["`
+            HDFS
+            hdfs dfs -ls /
+        `"]
+
+        R -.-> comm1
 
         A --> L
         B --> L
         C --> L
         D --> L
         E --> L
+
 
         
         L["`**Limpieza**
@@ -101,6 +108,9 @@ flowchart LR
     classDef repository fill:#aaa,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
+    classDef paragraph fill:white,stroke:white;
+    classDef comment fill:yellow,stroke:black,color:black,stroke-width:2px,font-style:italic
+
 
     class DOC_RIPS,DOC_EV,DOC_SEGCOVID,DOC_SIVIGILA,DOC_VACUNASCOVID doc;
     class DATA_RIPS,DATA_EV,DATA_SEGCOVID,DATA_SIVIGILA,DATA_VACUNASCOVID data;
@@ -109,7 +119,8 @@ flowchart LR
     class CRIPS process;
     class L,P process;
     class DP,OD,AN data;
-    class RD,DB,RS process
+    class RD,DB,RS process;
+    class comm1 comment;
 
     click L "https://github.com/AGORA-COL/Data_lake"
     click P "https://github.com/AGORA-COL/Data_lake"
