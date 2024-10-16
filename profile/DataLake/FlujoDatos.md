@@ -9,58 +9,60 @@
 flowchart LR
     subgraph DL[Data Lake]
         subgraph R["Datos crudos (rawdata)"]
+            direction LR
             subgraph A[RIPS]
-                DATA_RIPS[Datos RIPS]
-                DOC_RIPS["`Documento entendimiento
-                     de los datos 
-                     RIPS`"]
+                direction LR
+                DATA_RIPS[("/rawdata/rips")]
+                DOC_RIPS["`Documento entendimiento de los datos RIPS`"]
                 CRIPS[Clasificación RIPS]
             end
             subgraph B[Estadísticas vitales]
-                DATA_EV[Datos Estarísticas vitales]
-                DOC_EV["`Documento entendimiento
-                     de los datos 
-                     ESTADÍSTICAS VITALES`"]
+                direction LR
+                DATA_EV[("/rawdata/vitales")]
+                DOC_EV["`Documento entendimiento de los datos ESTADÍSTICAS VITALES`"]
             end
             subgraph C[SEGCOVID]
-                DATA_SEGCOVID[Datos SEGCOVID]
-                DOC_SEGCOVID["`Documento entendimiento
-                     de los datos 
-                     SEGCOVID`"]
+                direction LR
+                DATA_SEGCOVID[(/rawdata/segcovid)]
+                DOC_SEGCOVID["`Documento entendimiento de los datos SEGCOVID`"]
             end
             subgraph D[SIVIGILA]
-                DATA_SIVIGILA[Datos SIVIGILA]
-                DOC_SIVIGILA["`Documento entendimiento
-                     de los datos 
-                     SIVIGILA`"]
+                direction LR
+                DATA_SIVIGILA[(/rawdata/sivigila)]
+                DOC_SIVIGILA["`Documento entendimiento de los datos SIVIGILA`"]
             end
             subgraph E[VACUNASCOVID]
-                DATA_VACUNASCOVID[Datos VACUNASCOVID]
-                DOC_VACUNASCOVID["`Documento entendimiento
-                     de los datos 
-                     VACUNASCOVID`"]
+                direction LR
+                DATA_VACUNASCOVID[(/rawdata/vacunascovid2)]
+                DOC_VACUNASCOVID["`Documento entendimiento de los datos VACUNASCOVID`"]
             end
         end
 
-        comm1["`
-            HDFS
-            hdfs dfs -ls /
+        comm1["`Los datos se acceden por *HDFS*
+                hdfs dfs -ls /rawdata
         `"]
+        comm1 -.-> R
+         
 
-        R -.-> comm1
+        comm2["`/rawdata/vacunascovid tiene datos desactualizados`"]
 
-        A --> L
-        B --> L
-        C --> L
-        D --> L
-        E --> L
+        comm2 -.-> DATA_VACUNASCOVID
 
-
+        DATA_RIPS --> L
+        DATA_EV --> L
+        DATA_SEGCOVID --> L
+        DATA_SIVIGILA --> L
+        DATA_VACUNASCOVID --> L
         
         L["`**Limpieza**
         (Github: *Data_lake*)`"]
         subgraph DP["Data limpia (stagedata)"]
         end
+
+        comm3["`Los datos se acceden por *HDFS*
+                hdfs dfs -ls /stagedata
+        `"]
+        comm3 -.-> DP
 
         L --> DP
         DP --> P
@@ -71,56 +73,50 @@ flowchart LR
         P --> AN
 
         AN["Data preprocesada (analytics)"]
-
+        comm4["`Los datos se acceden por *HDFS*
+                hdfs dfs -ls /analytics
+        `"]
+        comm4 -.-> AN
     end
     
     AN --> RD
     AN --> RS
 
 
-    OD[("`Repositorio OneDrive
-    *PANDEMIA COLOMBIA-raw_data*
-    `")]
+    OD[("`Proyecto Lago de Datos AGORA - OneDrive`")]
 
     OD --> DB
 
     subgraph G[Generación de reportes]
-        RD["`**Reportes descriptivos 
-        COVID19**
-        (Github: *dl-covid19-
-        descriptive-reports*)`"]
-        RS["`**RIPS Surveillance**
-        (Github: *quality-
-        rips-surveillance*)
+        RD["`**Reportes descriptivos COVID19** (Github: *dl-covid19-descriptive-reports*)`"]
+        RS["`**RIPS Surveillance** (Github: *quality-rips-surveillance*)
         `"]
-        DB["`**COVID19 Dashboard**
-        (Github: *dl-covid19-
-        col-dashboard*)`"]
+        DB["`**COVID19 Dashboard** (Github: *dl-covid19-col-dashboard*)`"]
     end
 
 
     
 
 
-    classDef data fill:#fff,stroke:#333,stroke-width:2px,color:#000,rx:10,ry:10;
-    classDef doc fill:#cab,stroke:#333,stroke-width:2px,color:#000;
+    classDef data fill:#ffe7a6,stroke:#333,stroke-width:2px,color:#000,rx:0,ry:0;
+    classDef doc fill:white,stroke:#333,stroke-width:2px,color:#000;
     classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black,rx:30,ry:30;
     classDef repository fill:#aaa,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
     classDef paragraph fill:white,stroke:white;
     classDef comment fill:yellow,stroke:black,color:black,stroke-width:2px,font-style:italic
+    classDef container fill:#d4fcd8
 
 
-    class DOC_RIPS,DOC_EV,DOC_SEGCOVID,DOC_SIVIGILA,DOC_VACUNASCOVID doc;
+    class CRIPS,DOC_RIPS,DOC_EV,DOC_SEGCOVID,DOC_SIVIGILA,DOC_VACUNASCOVID doc;
     class DATA_RIPS,DATA_EV,DATA_SEGCOVID,DATA_SIVIGILA,DATA_VACUNASCOVID data;
-    class R data;
+    class R container;
     class DL repository;
-    class CRIPS process;
     class L,P process;
     class DP,OD,AN data;
     class RD,DB,RS process;
-    class comm1 comment;
+    class comm1,comm2,comm3,comm4 comment;
 
     click L "https://github.com/AGORA-COL/Data_lake"
     click P "https://github.com/AGORA-COL/Data_lake"
@@ -137,5 +133,5 @@ flowchart LR
     click DB "https://github.com/AGORA-COL/dl-covid19-col-dashboard"
     click RS "https://github.com/AGORA-COL/quality-rips-surveillance"
 
-    click OD "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Afc7d68d1a9c84f048235ca67be22ebb1&sharingv2=true&fromShare=true&at=9&CT=1725289769440&OR=OWA-NT-Mail&CID=9c3ffb10-dcf6-37df-ea1c-3b1c7661d5db&id=%2Fpersonal%2Fjemurillo_javeriana_edu_co%2FDocuments%2FJAVERIANA%2FDatos_AGORA%2FPANDEMIA%20COLOMBIA-raw_data&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
+    click OD "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA%2DNT%2DMail&CID=737d02ea%2Df0eb%2Df341%2Df361%2D9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo%5Fjaveriana%5Fedu%5Fco%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20lago%20de%20datos%20AGORA&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
 ```

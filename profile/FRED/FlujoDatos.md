@@ -11,7 +11,8 @@ En este caso, se utiliza para simular el proceso de dispersión del virus SARS-C
 ```mermaid
 flowchart TB
     subgraph EPS[Elaboración Poblaciones sintéticas]
-        GPS([Generador poblaciones sintéticas])
+        GPS(["`Generador poblaciones sintéticas.
+        Github: synthetic_populations`"])
         PS[(Poblaciones sintéticas)]
         CPS([Comparación poblaciones sintéticas])
         DC[(Datos censo 2018)]
@@ -20,14 +21,15 @@ flowchart TB
     subgraph CP[Calibración de parámetros]
         EC[Escenarios contrafactuales]
         FAM[Fred Agent Model]
-        F([FRED])
+        F(["`Versión modificada de FRED. 
+        Github: FRED`"])
         FP[Parámetros FRED]
-        RP([Regresión de parámetros])
+        RP(["`Regresión de parámetros. Github: fred_parameters_regression`"])
         ML[Modelo ML para regresión]
         AM([Actualizar modelo])
         EC --> F --> FP --> RP --> ML --> AM --> FAM --> F
     end
-    R([Generación de reportes])
+    R(["`Generación de reportes. Github: model-reports`"])
 
     GPS --> PS --> CPS
     DC --> CPS
@@ -36,8 +38,9 @@ flowchart TB
 
 
     %% Links
+    click DC "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA%2DNT%2DMail&CID=737d02ea%2Df0eb%2Df341%2Df361%2D9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo%5Fjaveriana%5Fedu%5Fco%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20FRED%20AGORA%2FDatos%20FRED%2FFRED%2Dinputs&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
     click GPS "https://github.com/AGORA-COL/synthetic_populations"
-    click ML "https://github.com/AGORA-COL/fred_parameters_regression"
+    click RP "https://github.com/AGORA-COL/fred_parameters_regression"
     click R "https://github.com/AGORA-COL/model-reports"
     click F "https://github.com/AGORA-COL/FRED"
     click FAM "https://github.com/AGORA-COL/fred_colombia_implementation"
