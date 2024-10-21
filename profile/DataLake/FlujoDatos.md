@@ -133,7 +133,7 @@ flowchart LR
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
     classDef paragraph fill:white,stroke:white;
     classDef comment fill:yellow,stroke:black,color:black,stroke-width:2px,font-style:italic
-    classDef container fill:lightgray
+    classDef container fill:lightgray,stroke:black,color:black
     classDef label fill:transparent,stroke:transparent
 
 
