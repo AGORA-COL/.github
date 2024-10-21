@@ -167,4 +167,7 @@ flowchart LR
     click PBI "https://github.com/AGORA-COL/Data_lake/tree/main/Notebooks/PowerBI"
 
     click RevDS "https://drive.google.com/drive/folders/1_keziEHX_UJUSq2jJeK7qCer3D5KFRW_"
+
+    click PVP "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA-NT-Mail&CID=737d02ea-f0eb-f341-f361-9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo_javeriana_edu_co%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20Visualizador%20pandemia&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
+
 ```
