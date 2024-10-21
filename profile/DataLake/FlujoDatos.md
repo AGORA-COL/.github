@@ -83,17 +83,28 @@ flowchart LR
                 hdfs dfs -ls /analytics
         `"]
         comm4 -.-> AN
+
+        comm5["`Estos datasets todavía
+        no están listos`"]
+
+        comm5 -.-> AN
+        comm5 -.-> DP
     end
     
     %% AN --> RD
-    RIPS_MUESTRA --> RD
-    AN --> RS
+    R --> RD
+    %% AN --> RS
+    RIPS_MUESTRA --> RS
 
 
-    OD[("`Proyecto Lago de Datos AGORA - OneDrive`")]
-    RIPS_MUESTRA[("`Muestra RIPS`")]
-
-    OD --> DB
+    subgraph OD["Repositorio OneDrive"]
+        RIPS_MUESTRA[("`Muestra RIPS`")]
+        PVP[("`Proyecto Visualizador 
+        Pandemia - OneDrive`")]
+        comm6["`Enlace al reposotorio 
+        OneDrive`"]
+    end
+    PVP --> DB
     
 
     subgraph G[Generación de reportes]
@@ -105,11 +116,10 @@ flowchart LR
         DB["`**COVID19 Dashboard**
         (Github: *dl-covid19-col-dashboard*)`"]
         PBI["`Reportes PowerBI
-        (Github: *Data_lake*)
-        `"]
+        (Github: *Data_lake*)`"]
     end
 
-
+    DATA_RIPS --> PBI
     RD --> RevDS
 
     RevDS["Revisión de datasets"]
@@ -124,15 +134,16 @@ flowchart LR
     classDef paragraph fill:white,stroke:white;
     classDef comment fill:yellow,stroke:black,color:black,stroke-width:2px,font-style:italic
     classDef container fill:gray
+    classDef label fill:transparent,stroke:transparent
 
 
     class CRIPS,DOC_RIPS,DOC_EV,DOC_SEGCOVID,DOC_SIVIGILA,DOC_VACUNASCOVID doc;
     class DATA_RIPS,DATA_EV,DATA_SEGCOVID,DATA_SIVIGILA,DATA_VACUNASCOVID data;
     class R,G container;
     class DL repository;
-    class DP,OD,AN,RIPS_MUESTRA data;
+    class DP,OD,AN,RIPS_MUESTRA,PVP data;
     class L,P,PBI,RD,DB,RS process;
-    class comm1,comm2,comm3,comm4 comment;
+    class comm1,comm2,comm3,comm4,comm5,comm6 comment;
     class RevDS report;
 
     click L "https://github.com/AGORA-COL/Data_lake"
@@ -150,7 +161,7 @@ flowchart LR
     click DB "https://github.com/AGORA-COL/dl-covid19-col-dashboard"
     click RS "https://github.com/AGORA-COL/quality-rips-surveillance"
 
-    click OD "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA%2DNT%2DMail&CID=737d02ea%2Df0eb%2Df341%2Df361%2D9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo%5Fjaveriana%5Fedu%5Fco%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20lago%20de%20datos%20AGORA&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
+    click comm6 "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA%2DNT%2DMail&CID=737d02ea%2Df0eb%2Df341%2Df361%2D9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo%5Fjaveriana%5Fedu%5Fco%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20lago%20de%20datos%20AGORA&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
 
     click RIPS_MUESTRA "https://livejaverianaedu-my.sharepoint.com/personal/jemurillo_javeriana_edu_co/_layouts/15/onedrive.aspx?e=5%3Aa55942a7bb4246b7b87344e4c2d263b8&sharingv2=true&fromShare=true&at=9&CT=1727201099492&OR=OWA-NT-Mail&CID=737d02ea-f0eb-f341-f361-9bbdab61b3a7&id=%2Fpersonal%2Fjemurillo_javeriana_edu_co%2FDocuments%2FJAVERIANA%2FProyecto%20AGORA%2FProyecto%20lago%20de%20datos%20AGORA%2FRIPS-%20Rutina%20clasificaci%C3%B3n%2Fdata&FolderCTID=0x012000FE02BE409825504DAFD5FA09F3B44529&view=0"
 
