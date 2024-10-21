@@ -133,15 +133,14 @@ flowchart LR
     classDef report fill:#aeb,stroke:#333,stroke-width:2px,color:#000;
     classDef paragraph fill:white,stroke:white;
     classDef comment fill:yellow,stroke:black,color:black,stroke-width:2px,font-style:italic
-    classDef container fill:gray
+    classDef container fill:lightgray
     classDef label fill:transparent,stroke:transparent
 
 
     class CRIPS,DOC_RIPS,DOC_EV,DOC_SEGCOVID,DOC_SIVIGILA,DOC_VACUNASCOVID doc;
     class DATA_RIPS,DATA_EV,DATA_SEGCOVID,DATA_SIVIGILA,DATA_VACUNASCOVID data;
-    class R,G container;
-    class DL repository;
-    class DP,OD,AN,RIPS_MUESTRA,PVP data;
+    class G,DL container;
+    class R,DP,OD,AN,RIPS_MUESTRA,PVP data;
     class L,P,PBI,RD,DB,RS process;
     class comm1,comm2,comm3,comm4,comm5,comm6 comment;
     class RevDS report;
