@@ -3,7 +3,7 @@
 ```mermaid
 flowchart LR
     R[("1. Datos crudos (RAW)")]
-    subgraph 2. Preproceso
+    subgraph PP["2. Preproceso"]
         direction LR
         C(["2.1. Conversión"])
         P[("2.2. Datos en formato Parquet")]
@@ -17,7 +17,7 @@ flowchart LR
     class C process;
     class P data;
     class S process;
-    class D data;
+    class D data; 
 
     classDef data fill:white,stroke:#333,stroke-width:2px,color:#000;
     classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black;
@@ -25,11 +25,6 @@ flowchart LR
     classDef process2 fill:green,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#ddd,stroke:#333,stroke-width:2px,color:#000;
 
-    class A,B,C,D,E data;
-    class F process;
-    class DL repository;
-    class R1,R2,R3,R4,R5 report;
-    class G process2;    
 
     
 
