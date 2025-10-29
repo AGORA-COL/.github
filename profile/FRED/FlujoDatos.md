@@ -53,15 +53,17 @@ flowchart TB
     click AL "https://github.com/AGORA-COL/analisis_likelihood"
 
     %% Styles
-    class F,GR,RP,GPS,CPS,AM,AL process;
+    class F,GR,GPS,CPS,AL process;
     class PS,DC repository;
-    class EC,ML,FAM,FP model;
+    class EC model;
     class R report;
+    class FP,RP,ML,AM,FAM deprecated;
 
     classDef model fill:#fff,stroke:#333,stroke-width:2px,color:#000,rx:10,ry:10;
     classDef process fill:#99f,stroke:#333,stroke-width:2px,color:black,rx:30,ry:30;
     classDef repository fill:#fff,stroke:#333,stroke-width:2px,stroke: 5 5,color:#000;
     classDef software fill:orange,stroke:#333,stroke-width:2px,color:#000;
     classDef report fill:#ddd,stroke:#333,stroke-width:2px,color:#000;
+    classDef deprecated fill:#80808088,stroke:#333,stroke-width:2px;
 ```
 
